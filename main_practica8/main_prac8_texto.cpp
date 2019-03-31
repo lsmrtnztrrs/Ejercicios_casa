@@ -152,12 +152,19 @@ void display ( void )   // Creamos la funcion donde se dibuja
 	
 		glPushMatrix(); 
 			glColor3f(1.0, 1.0, 1.0);
-			glScalef(4.0,1.0,1.0);  
+			glScalef(4.0,4.0,1.0);  
 			prisma(t_Ajedrez2.GLindex, t_metal01.GLindex);
 		glPopMatrix();
 
 		glPushMatrix();
-		glTranslatef(0.0,-1.0,0.0);
+		glTranslatef(0.0,-2.0,0.0);
+		glColor3f(1.0, 1.0, 1.0);
+		glScalef(1.0, 1.0, 1.0);
+		prisma(t_Ajedrez2.GLindex, t_metal01.GLindex);
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(0.0, -3.0, 0.0);
 		glColor3f(1.0, 1.0, 1.0);
 		glScalef(1.0, 1.0, 1.0);
 		prisma(t_Ajedrez2.GLindex, t_metal01.GLindex);
