@@ -21,6 +21,8 @@ CTexture t_Ajedrez1;
 CTexture t_Ajedrez2;
 CTexture t_metal01;
 
+CTexture florlis;
+
 
 int font=(int)GLUT_BITMAP_TIMES_ROMAN_24;
 
@@ -53,6 +55,10 @@ void InitGL ( GLvoid )     // Inicializamos parametros
 	t_Ajedrez2.LoadTGA("02.tga");
 	t_Ajedrez2.BuildGLTexture();
 	t_Ajedrez2.ReleaseImage();
+
+	florlis.LoadTGA("florlis.tga");
+	florlis.BuildGLTexture();
+	florlis.ReleaseImage();
 }
 
 
@@ -197,7 +203,7 @@ void display ( void )   // Creamos la funcion donde se dibuja
 		glTranslatef(-3.0, -1.0, 0.0);
 		glColor3f(1.0, 1.0, 1.0);
 		glScalef(2.0, 0.5, 2.0);
-		prisma(t_Ajedrez2.GLindex, t_metal01.GLindex);
+		prisma(t_metal01.GLindex, t_metal01.GLindex);
 		glScalef(0.5, 2.0, 0.5);
 		glPopMatrix();
 
@@ -212,13 +218,17 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 		//respaldo
 		glPushMatrix();
+		glEnable(GL_ALPHA_TEST);
+		glAlphaFunc(GL_GREATER, 0.1);
 		glTranslatef(-4.0, 0.0, 0.0);
 		glColor3f(1.0, 1.0, 1.0);
 		glScalef(0.5, 2.0, 2.0);
-		prisma(t_Ajedrez2.GLindex, t_metal01.GLindex);
+		prisma(florlis.GLindex, t_metal01.GLindex);
 		glScalef(2, 0.5, 0.5);
+		glDisable(GL_ALPHA_TEST);
 		glPopMatrix();
 
+		
 
 		//Silla derecha
 
@@ -227,7 +237,7 @@ void display ( void )   // Creamos la funcion donde se dibuja
 		glTranslatef(2.0, -2.0, 0.0);
 		glColor3f(1.0, 1.0, 1.0);
 		glScalef(0.5, 2.0, 2.0);
-		prisma(t_Ajedrez2.GLindex, t_metal01.GLindex);
+		prisma(t_metal01.GLindex, t_metal01.GLindex);
 		glScalef(2, 0.5, 0.5);
 		glPopMatrix();
 
@@ -237,7 +247,7 @@ void display ( void )   // Creamos la funcion donde se dibuja
 		glTranslatef(3.0, -1.0, 0.0);
 		glColor3f(1.0, 1.0, 1.0);
 		glScalef(2.0, 0.5, 2.0);
-		prisma(t_Ajedrez2.GLindex, t_metal01.GLindex);
+		prisma(t_metal01.GLindex, t_metal01.GLindex);
 		glScalef(0.5, 2.0, 0.5);
 		glPopMatrix();
 
@@ -252,11 +262,14 @@ void display ( void )   // Creamos la funcion donde se dibuja
 
 		//respaldo
 		glPushMatrix();
+		glEnable(GL_ALPHA_TEST);
+		glAlphaFunc(GL_GREATER, 0.1);
 		glTranslatef(4.0, 0.0, 0.0);
 		glColor3f(1.0, 1.0, 1.0);
 		glScalef(0.5, 2.0, 2.0);
-		prisma(t_Ajedrez2.GLindex, t_metal01.GLindex);
+		prisma(florlis.GLindex, t_metal01.GLindex);
 		glScalef(2, 0.5, 0.5);
+		glDisable(GL_ALPHA_TEST);
 		glPopMatrix();
 
 
